@@ -59,7 +59,7 @@ body {
 
 /* Bounce-In Animation */
 .bounce-in {
-    animation: bounceIn 1.5s ease-in-out;
+    animation: bounceIn 0.8s ease-in-out;
 }
 
 @keyframes bounceIn {
@@ -74,8 +74,8 @@ body {
 }
 
 .hover-scale:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* Hover Rotate */
@@ -181,4 +181,32 @@ body {
 /* Staggered Animation for Projects */
 .flip-card:nth-child(1) { animation-delay: 0.1s; }
 .flip-card:nth-child(2) { animation-delay: 0.3s; }
-.flip-card:nth-child(3) { animation-delay: 0.5s; }
+
+/* Glow Effect for Project Cards and Skill Cards */
+.glow-effect:hover {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.8);
+}
+
+/* Scroll-Triggered Background Color Shift */
+.scroll-color-shift {
+    transition: background-color 0.5s ease;
+}
+
+.scroll-color-shift.visible {
+    background-color: #2d3748;
+}
+
+/* Skill Card Animation */
+.skill-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:nth-child(1) { animation-delay: 0.1s; }
+.skill-card:nth-child(2) { animation-delay: 0.2s; }
+.skill-card:nth-child(3) { animation-delay: 0.3s; }
+.skill-card:nth-child(4) { animation-delay: 0.4s; }
+.skill-card:nth-child(5) { animation-delay: 0.5s; }
+.skill-card:nth-child(6) { animation-delay: 0.6s; }
+.skill-card:nth-child(7) { animation-delay: 0.7s; }
+.skill-card:nth-child(8) { animation-delay: 0.8s; }
+.skill-card:nth-child(9) { animation-delay: 0.9s; }

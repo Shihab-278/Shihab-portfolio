@@ -26,11 +26,12 @@
     <nav class="gradient-bg p-4 sticky top-0 z-10">
         <div class="container mx-auto flex justify-between items-center">
             <h1 class="text-2xl font-bold">Shihab Uddin</h1>
-            <div class="space-x-4">
+            <div class="flex items-center space-x-4">
                 <a href="#home" class="nav-link hover:text-gray-300">Home</a>
                 <a href="#about" class="nav-link hover:text-gray-300">About</a>
                 <a href="pages/projects.html" class="nav-link hover:text-gray-300">Projects</a>
                 <a href="#contact" class="nav-link hover:text-gray-300">Contact</a>
+                <a href="assets/Shihab_Resume_updated.pdf" download class="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 hover-scale pulse-button">Download CV</a>
             </div>
         </div>
     </nav>
@@ -38,7 +39,7 @@
     <!-- Home Section -->
     <section id="home" class="flex items-center justify-center min-h-screen gradient-bg">
         <div class="text-center">
-            <img src="https://ibb.co.com/TDDZVjcF" alt="Shihab Uddin" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-blue-500 bounce-in">
+            <img src="assets/pp.png" alt="Shihab Uddin" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-blue-500 bounce-in">
             <h1 class="text-5xl font-bold mb-4 slide-in-left">Hi, I'm Shihab Uddin</h1>
             <p class="text-xl mb-6 slide-in-right">Software Developer | Building Innovative Solutions</p>
             <a href="pages/projects.html" class="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 hover-scale">View My Work</a>
@@ -48,11 +49,31 @@
     <!-- About Section -->
     <section id="about" class="py-16">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-8 fade-in">About Me</h2>
-            <div class="max-w-2xl mx-auto text-center">
-                <img src="https://ibb.co.com/TDDZVjcF" alt="Shihab Uddin" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-blue-500 hover-rotate">
-                <p class="text-lg mb-4 fade-in">I'm Shihab Uddin, a passionate Software Developer with a BSc in CSE from UITS.</p>
-                <p class="text-lg fade-in">My skills include Web Development, Software Engineering, and Problem Solving.</p>
+            <h2 class="text-3xl font-bold text-center mb-12 fade-in">About Me</h2>
+            <div class="max-w-4xl mx-auto">
+                <!-- Profile Description -->
+                <div class="text-center mb-12 fade-in">
+                    <img src="assets/pp.png" alt="Shihab Uddin" class="w-40 h-40 rounded-full mx-auto mb-6 border-4 border-blue-500 shadow-lg hover-rotate">
+                    <p class="text-lg leading-relaxed max-w-2xl mx-auto">
+                        I'm Shihab Uddin, a passionate Software Developer dedicated to crafting innovative, user-friendly solutions. With a proactive mindset and strong collaboration skills, I thrive in dynamic environments, delivering high-quality projects with precision.
+                    </p>
+                </div>
+
+                <!-- Skills -->
+                <div>
+                    <h3 class="text-2xl font-semibold text-center mb-8 fade-in">My Skills</h3>
+                    <div class="flex flex-wrap justify-center gap-4 max-w-3xl mx-auto">
+                        <div class="skill-card bg-gradient-to-r from-blue-600 to-blue-400 text-white text-center py-3 px-6 rounded-lg shadow-lg hover:glow-effect hover-scale bounce-in">C/C++</div>
+                        <div class="skill-card bg-gradient-to-r from-blue-600 to-blue-400 text-white text-center py-3 px-6 rounded-lg shadow-lg hover:glow-effect hover-scale bounce-in">HTML</div>
+                        <div class="skill-card bg-gradient-to-r from-blue-600 to-blue-400 text-white text-center py-3 px-6 rounded-lg shadow-lg hover:glow-effect hover-scale bounce-in">CSS</div>
+                        <div class="skill-card bg-gradient-to-r from-blue-600 to-blue-400 text-white text-center py-3 px-6 rounded-lg shadow-lg hover:glow-effect hover-scale bounce-in">JavaScript</div>
+                        <div class="skill-card bg-gradient-to-r from-blue-600 to-blue-400 text-white text-center py-3 px-6 rounded-lg shadow-lg hover:glow-effect hover-scale bounce-in">PHP</div>
+                        <div class="skill-card bg-gradient-to-r from-blue-600 to-blue-400 text-white text-center py-3 px-6 rounded-lg shadow-lg hover:glow-effect hover-scale bounce-in">Laravel</div>
+                        <div class="skill-card bg-gradient-to-r from-blue-600 to-blue-400 text-white text-center py-3 px-6 rounded-lg shadow-lg hover:glow-effect hover-scale bounce-in">MySQL</div>
+                        <div class="skill-card bg-gradient-to-r from-blue-600 to-blue-400 text-white text-center py-3 px-6 rounded-lg shadow-lg hover:glow-effect hover-scale bounce-in">Tailwind CSS</div>
+                        <div class="skill-card bg-gradient-to-r from-blue-600 to-blue-400 text-white text-center py-3 px-6 rounded-lg shadow-lg hover:glow-effect hover-scale bounce-in">Bootstrap</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -84,9 +105,9 @@
     <!-- Footer -->
     <footer class="gradient-bg p-4 text-center">
         <div class="space-x-4 mb-2">
-            <a href="#" class="social-icon hover:text-gray-300"><i class="fab fa-github"></i></a>
-            <a href="#" class="social-icon hover:text-gray-300"><i class="fab fa-linkedin"></i></a>
-            <a href="#" class="social-icon hover:text-gray-300"><i class="fab fa-twitter"></i></a>
+            <a href="https://github.com/shihab-278" class="social-icon hover:text-gray-300"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/shihab-uddin-20606722a/" class="social-icon hover:text-gray-300"><i class="fab fa-linkedin"></i></a>
+            <a href="https://x.com/ahmedshihab278" class="social-icon hover:text-gray-300"><i class="fab fa-twitter"></i></a>
         </div>
         <p>© 2025 Shihab Uddin. All rights reserved.</p>
     </footer>

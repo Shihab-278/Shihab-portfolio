@@ -24,6 +24,18 @@ const observer = new IntersectionObserver((entries) => {
 
 fadeInElements.forEach(el => observer.observe(el));
 
+// Scroll-Triggered Background Color Shift
+const scrollSections = document.querySelectorAll('.scroll-color-shift');
+const scrollObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.2 });
+
+scrollSections.forEach(section => scrollObserver.observe(section));
+
 // Loading Animation
 window.addEventListener('load', () => {
     const loader = document.getElementById('loader');
