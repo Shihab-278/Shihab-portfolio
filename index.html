@@ -3,75 +3,314 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Shihab Uddin, a Software Developer with expertise in Web Development and Software Engineering.">
-    <meta name="keywords" content="Shihab Uddin, Software Developer, Portfolio, Web Development, UITS">
+    <meta name="description" content="Shihab Uddin - Professional Software Developer specializing in modern web development, creating innovative and scalable solutions with cutting-edge technologies.">
+    <meta name="keywords" content="Shihab Uddin, Software Developer, Full Stack Developer, Web Development, JavaScript, PHP, Laravel, React, Node.js, Portfolio">
     <meta name="author" content="Shihab Uddin">
-    <title>Shihab Uddin - Portfolio</title>
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#6366f1">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Shihab Uddin - Professional Software Developer">
+    <meta property="og:description" content="Creating innovative web solutions with modern technologies and best practices.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://shihab-uddin.dev">
+    <meta property="og:image" content="assets/my.jpg">
+    
+    <title>Shihab Uddin - Professional Software Developer</title>
+    
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" as="style">
+    
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome CDN for Social Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="min-h-screen flex flex-col bg-gray-900 text-gray-200">
-    <!-- Loading Animation -->
-    <div id="loader" class="fixed inset-0 bg-gray-900 flex items-center justify-center z-50">
-        <div class="loader-circle"></div>
+<body class="min-h-screen flex flex-col">
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress">
+        <div class="scroll-progress-bar" id="scrollProgressBar"></div>
     </div>
 
-    <!-- Navbar -->
-    <nav class="gradient-bg p-4 sticky top-0 z-10">
-        <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-2xl font-bold">Shihab Uddin</h1>
-            <div class="flex items-center space-x-4">
-                <a href="#home" class="nav-link hover:text-gray-300">Home</a>
-                <a href="#about" class="nav-link hover:text-gray-300">About</a>
-                <a href="pages/projects.html" class="nav-link hover:text-gray-300">Projects</a>
-                <a href="#contact" class="nav-link hover:text-gray-300">Contact</a>
-                <a href="assets/Shihab_Resume_updated.pdf" download class="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 hover-scale pulse-button">Download CV</a>
+    <!-- Loading Animation -->
+    <div id="loader" class="fixed inset-0 flex items-center justify-center z-50">
+        <div class="text-center">
+            <div class="loader-circle mb-4"></div>
+            <p class="text-lg font-medium text-white">Loading Portfolio...</p>
+        </div>
+    </div>
+
+    <!-- Modern Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-dark backdrop-blur-xl border-b border-white/10">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-600 flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">S</span>
+                    </div>
+                    <h1 class="text-xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                        Shihab Uddin
+                    </h1>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-2">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#experience" class="nav-link">Experience</a>
+                    <a href="pages/projects.html" class="nav-link">Projects</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                    <a href="assets/shihab.pdf" download class="modern-btn ml-4">
+                        <i class="fas fa-download"></i>
+                        Resume
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg glass">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div id="mobileMenu" class="md:hidden mt-4 space-y-2 hidden">
+                <a href="#home" class="block nav-link">Home</a>
+                <a href="#about" class="block nav-link">About</a>
+                <a href="#experience" class="block nav-link">Experience</a>
+                <a href="pages/projects.html" class="block nav-link">Projects</a>
+                <a href="#contact" class="block nav-link">Contact</a>
+                <a href="assets/shihab.pdf" download class="block modern-btn mt-4">
+                    <i class="fas fa-download"></i>
+                    Resume
+                </a>
             </div>
         </div>
     </nav>
 
-    <!-- Home Section -->
-    <section id="home" class="flex items-center justify-center min-h-screen gradient-bg">
-        <div class="text-center">
-            <img src="assets/pp.png" alt="Shihab Uddin" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-blue-500 bounce-in">
-            <h1 class="text-5xl font-bold mb-4 slide-in-left">Hi, I'm Shihab Uddin</h1>
-            <p class="text-xl mb-6 slide-in-right">Software Developer | Building Innovative Solutions</p>
-            <a href="pages/projects.html" class="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 hover-scale">View My Work</a>
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <!-- Animated Background -->
+        <div class="absolute inset-0 bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900">
+            <div class="absolute inset-0 bg-black/50"></div>
+            <!-- Floating Particles -->
+            <div class="absolute top-1/4 left-1/4 w-2 h-2 bg-blue-400 rounded-full animate-ping"></div>
+            <div class="absolute top-1/3 right-1/4 w-1 h-1 bg-purple-400 rounded-full animate-pulse"></div>
+            <div class="absolute bottom-1/4 left-1/3 w-3 h-3 bg-pink-400 rounded-full animate-bounce"></div>
+        </div>
+        
+        <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
+            <!-- Profile Image with Modern Design -->
+            <div class="relative mb-8 inline-block">
+                <div class="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-white/20 shadow-2xl backdrop-blur-sm mx-auto bounce-in">
+                    <img src="assets/my.jpg" alt="Shihab Uddin" class="w-full h-full object-cover">
+                </div>
+                <div class="absolute -top-2 -right-2 w-6 h-6 bg-green-500 rounded-full border-2 border-white animate-pulse"></div>
+            </div>
+            
+            <!-- Main Heading -->
+            <div class="slide-in-left">
+                <h1 class="hero-title mb-6">
+                    Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">Shihab Uddin</span>
+                </h1>
+                <div class="hero-subtitle slide-in-right">
+                    <span class="inline-block mr-2">💻</span>
+                    <span class="typewriter-text">Full-Stack Developer</span>
+                    <span class="inline-block ml-2">🚀</span>
+                </div>
+                <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed fade-in">
+                    Crafting innovative digital experiences with modern technologies. 
+                    Passionate about clean code, user-centric design, and scalable solutions.
+                </p>
+            </div>
+            
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center bounce-in">
+                <a href="pages/projects.html" class="modern-btn">
+                    <i class="fas fa-code"></i>
+                    View My Work
+                </a>
+                <a href="#contact" class="modern-btn bg-transparent border-2 border-white/20 hover:border-white/40">
+                    <i class="fas fa-envelope"></i>
+                    Get In Touch
+                </a>
+            </div>
+            
+            <!-- Quick Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 fade-in">
+                <div class="text-center glass rounded-xl p-4">
+                    <div class="text-2xl font-bold text-blue-400 mb-1">2+</div>
+                    <div class="text-sm text-gray-400">Years Experience</div>
+                </div>
+                <div class="text-center glass rounded-xl p-4">
+                    <div class="text-2xl font-bold text-purple-400 mb-1">10+</div>
+                    <div class="text-sm text-gray-400">Projects Completed</div>
+                </div>
+                <div class="text-center glass rounded-xl p-4">
+                    <div class="text-2xl font-bold text-pink-400 mb-1">5+</div>
+                    <div class="text-sm text-gray-400">Technologies</div>
+                </div>
+                <div class="text-center glass rounded-xl p-4">
+                    <div class="text-2xl font-bold text-green-400 mb-1">24/7</div>
+                    <div class="text-sm text-gray-400">Availability</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-white/60 text-xl"></i>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-16">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12 fade-in">About Me</h2>
-            <div class="max-w-4xl mx-auto">
-                <!-- Profile Description -->
-                <div class="text-center mb-12 fade-in">
-                    <img src="assets/pp.png" alt="Shihab Uddin" class="w-40 h-40 rounded-full mx-auto mb-6 border-4 border-blue-500 shadow-lg hover-rotate">
-                    <p class="text-lg leading-relaxed max-w-2xl mx-auto">
-                        I'm Shihab Uddin, a passionate Software Developer dedicated to crafting innovative, user-friendly solutions. With a proactive mindset and strong collaboration skills, I thrive in dynamic environments, delivering high-quality projects with precision.
-                    </p>
+    <section id="about" class="py-20 bg-gray-900/50">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title fade-in">About Me</h2>
+            
+            <div class="max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                    <!-- About Content -->
+                    <div class="space-y-6 fade-in">
+                        <div class="glass rounded-2xl p-8">
+                            <h3 class="text-2xl font-bold mb-4 text-gradient">Passionate Developer</h3>
+                            <p class="text-gray-300 leading-relaxed mb-6">
+                                I'm Shihab Uddin, a passionate Full-Stack Developer with a keen eye for creating 
+                                exceptional digital experiences. I specialize in building scalable web applications 
+                                using modern technologies and best practices.
+                            </p>
+                            <p class="text-gray-300 leading-relaxed">
+                                With a strong foundation in both frontend and backend development, I enjoy 
+                                turning complex problems into simple, beautiful, and intuitive solutions.
+                            </p>
+                            
+                            <div class="flex items-center space-x-4 mt-6">
+                                <div class="flex items-center space-x-2">
+                                    <i class="fas fa-map-marker-alt text-blue-400"></i>
+                                    <span class="text-gray-300">Dhaka, Bangladesh</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <i class="fas fa-graduation-cap text-purple-400"></i>
+                                    <span class="text-gray-300">CS Graduate</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Profile Image -->
+                    <div class="relative fade-in">
+                        <div class="relative">
+                            <img src="assets/my.jpg" alt="Shihab Uddin" 
+                                 class="w-80 h-80 rounded-2xl object-cover mx-auto shadow-2xl hover-rotate">
+                            <div class="absolute inset-0 rounded-2xl bg-gradient-to-t from-black/50 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <p class="font-semibold">Ready to innovate</p>
+                                <p class="text-sm opacity-80">Let's build something amazing</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
-                <!-- Skills -->
-                <div>
-                    <h3 class="text-2xl font-semibold text-center mb-8 fade-in">My Skills</h3>
-                    <div class="flex flex-wrap justify-center gap-4 max-w-3xl mx-auto">
-                        <div class="skill-card bg-gradient-to-r from-blue-600 to-blue-400 text-white text-center py-3 px-6 rounded-lg shadow-lg hover:glow-effect hover-scale bounce-in">C/C++</div>
-                        <div class="skill-card bg-gradient-to-r from-blue-600 to-blue-400 text-white text-center py-3 px-6 rounded-lg shadow-lg hover:glow-effect hover-scale bounce-in">HTML</div>
-                        <div class="skill-card bg-gradient-to-r from-blue-600 to-blue-400 text-white text-center py-3 px-6 rounded-lg shadow-lg hover:glow-effect hover-scale bounce-in">CSS</div>
-                        <div class="skill-card bg-gradient-to-r from-blue-600 to-blue-400 text-white text-center py-3 px-6 rounded-lg shadow-lg hover:glow-effect hover-scale bounce-in">JavaScript</div>
-                        <div class="skill-card bg-gradient-to-r from-blue-600 to-blue-400 text-white text-center py-3 px-6 rounded-lg shadow-lg hover:glow-effect hover-scale bounce-in">PHP</div>
-                        <div class="skill-card bg-gradient-to-r from-blue-600 to-blue-400 text-white text-center py-3 px-6 rounded-lg shadow-lg hover:glow-effect hover-scale bounce-in">Laravel</div>
-                        <div class="skill-card bg-gradient-to-r from-blue-600 to-blue-400 text-white text-center py-3 px-6 rounded-lg shadow-lg hover:glow-effect hover-scale bounce-in">MySQL</div>
-                        <div class="skill-card bg-gradient-to-r from-blue-600 to-blue-400 text-white text-center py-3 px-6 rounded-lg shadow-lg hover:glow-effect hover-scale bounce-in">Tailwind CSS</div>
-                        <div class="skill-card bg-gradient-to-r from-blue-600 to-blue-400 text-white text-center py-3 px-6 rounded-lg shadow-lg hover:glow-effect hover-scale bounce-in">Bootstrap</div>
+                
+                <!-- Skills Section -->
+                <div class="fade-in">
+                    <h3 class="text-3xl font-bold text-center mb-12">
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
+                            Technical Skills
+                        </span>
+                    </h3>
+                    
+                    <!-- Skill Categories -->
+                    <div class="grid md:grid-cols-3 gap-8 mb-12">
+                        <!-- Frontend -->
+                        <div class="glass rounded-xl p-6 text-center">
+                            <div class="text-4xl mb-4">🎨</div>
+                            <h4 class="text-xl font-semibold mb-4 text-blue-400">Frontend</h4>
+                            <div class="space-y-2">
+                                <div class="skill-card">HTML</div>
+                                <div class="skill-card">CSS</div>
+                                <div class="skill-card">JavaScript</div>
+                                <div class="skill-card">Tailwind CSS</div>
+                                <div class="skill-card">Bootstrap</div>
+                                <div class="skill-card">Alpine JS</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Backend -->
+                        <div class="glass rounded-xl p-6 text-center">
+                            <div class="text-4xl mb-4">⚙️</div>
+                            <h4 class="text-xl font-semibold mb-4 text-purple-400">Backend</h4>
+                            <div class="space-y-2">
+                                <div class="skill-card">PHP</div>
+                                <div class="skill-card">Laravel</div>
+                                <div class="skill-card">Livewire</div>
+                                <div class="skill-card">C++</div>
+                                <div class="skill-card">C</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Database & Tools -->
+                        <div class="glass rounded-xl p-6 text-center">
+                            <div class="text-4xl mb-4">🗄️</div>
+                            <h4 class="text-xl font-semibold mb-4 text-green-400">Database & Tools</h4>
+                            <div class="space-y-2">
+                                <div class="skill-card">MySQL</div>
+                                <div class="skill-card">Git</div>
+                                <div class="skill-card">BurpSuite</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Experience Section -->
+    <section id="experience" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title fade-in">Experience & Education</h2>
+            
+            <div class="max-w-4xl mx-auto">
+                <!-- Timeline -->
+                <div class="space-y-8">
+                    <!-- Education Item -->
+                    <div class="glass rounded-xl p-8 fade-in hover-scale">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-graduation-cap text-white"></i>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
+                                    <h3 class="text-xl font-semibold">Bachelor of Science in Computer Science</h3>
+                                    <span class="text-blue-400 font-medium">2020 - 2024</span>
+                                </div>
+                                <p class="text-purple-400 font-medium mb-2">University of Information Technology & Sciences (UITS)</p>
+                                <p class="text-gray-300">Focused on software engineering, web development, and data structures & algorithms.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project Experience -->
+                    <div class="glass rounded-xl p-8 fade-in hover-scale">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-full bg-gradient-to-r from-green-500 to-teal-600 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-code text-white"></i>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
+                                    <h3 class="text-xl font-semibold">Freelance Web Developer</h3>
+                                    <span class="text-green-400 font-medium">2022 - Present</span>
+                                </div>
+                                <p class="text-teal-400 font-medium mb-2">Self-Employed</p>
+                                <p class="text-gray-300">Developing custom web applications and management systems for various clients using modern technologies.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -79,37 +318,176 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-16">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-8 fade-in">Get in Touch</h2>
-            <div class="max-w-lg mx-auto fade-in">
-                <form class="space-y-4">
-                    <div>
-                        <label for="name" class="block text-sm font-medium">Name</label>
-                        <input type="text" id="name" class="w-full p-2 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:border-blue-500 input-focus" placeholder="Your Name">
+    <section id="contact" class="py-20 bg-gray-900/50">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title fade-in">Let's Work Together</h2>
+            
+            <div class="max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Contact Info -->
+                    <div class="space-y-8 fade-in">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-6 text-gradient">Get In Touch</h3>
+                            <p class="text-gray-300 text-lg leading-relaxed mb-8">
+                                Ready to bring your ideas to life? I'm always excited to work on new projects 
+                                and collaborate with amazing people. Let's create something incredible together!
+                            </p>
+                        </div>
+                        
+                        <!-- Contact Methods -->
+                        <div class="space-y-6">
+                            <div class="flex items-center space-x-4 glass rounded-xl p-6">
+                                <div class="w-12 h-12 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center">
+                                    <i class="fas fa-envelope text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-white">Email</h4>
+                                    <p class="text-gray-300">suahmd193@gmail.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-4 glass rounded-xl p-6">
+                                <div class="w-12 h-12 rounded-full bg-gradient-to-r from-green-500 to-teal-600 flex items-center justify-center">
+                                    <i class="fas fa-phone text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-white">Phone</h4>
+                                    <p class="text-gray-300">+8801641388594</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-4 glass rounded-xl p-6">
+                                <div class="w-12 h-12 rounded-full bg-gradient-to-r from-purple-500 to-pink-600 flex items-center justify-center">
+                                    <i class="fas fa-map-marker-alt text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-white">Location</h4>
+                                    <p class="text-gray-300">Dhaka, Bangladesh</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Social Links -->
+                        <div>
+                            <h4 class="text-xl font-semibold mb-4 text-white">Connect With Me</h4>
+                            <div class="flex space-x-4">
+                                <a href="https://github.com/shihab-278" class="social-icon">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/in/shihab-uddin-20606722a/" class="social-icon">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="https://x.com/ahmedshihab278" class="social-icon">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <label for="email" class="block text-sm font-medium">Email</label>
-                        <input type="email" id="email" class="w-full p-2 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:border-blue-500 input-focus" placeholder="Your Email">
+                    
+                    <!-- Contact Form -->
+                    <div class="fade-in">
+                        <div class="glass rounded-2xl p-8">
+                            <h3 class="text-2xl font-bold mb-6 text-white">Send a Message</h3>
+                            <form id="contactForm" action="https://formspree.io/f/myzgkjna" method="POST" class="space-y-6">
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Full Name</label>
+                                        <input type="text" id="name" name="name" required 
+                                               class="modern-input w-full" placeholder="John Doe">
+                                    </div>
+                                    <div>
+                                        <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email Address</label>
+                                        <input type="email" id="email" name="email" required 
+                                               class="modern-input w-full" placeholder="john@example.com">
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <label for="subject" class="block text-sm font-medium text-gray-300 mb-2">Subject</label>
+                                    <input type="text" id="subject" name="subject" required 
+                                           class="modern-input w-full" placeholder="Project Inquiry">
+                                </div>
+                                
+                                <div>
+                                    <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Message</label>
+                                    <textarea id="message" name="message" rows="5" required 
+                                              class="modern-input w-full resize-none" 
+                                              placeholder="Tell me about your project..."></textarea>
+                                </div>
+                                
+                                <button type="submit" class="modern-btn w-full">
+                                    <i class="fas fa-paper-plane"></i>
+                                    Send Message
+                                </button>
+                                <p class="text-xs text-gray-400 text-center mt-4">Your message will be sent securely to suahmd193@gmail.com</p>
+                            </form>
+                        </div>
                     </div>
-                    <div>
-                        <label for="message" class="block text-sm font-medium">Message</label>
-                        <textarea id="message" rows="4" class="w-full p-2 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:border-blue-500 input-focus" placeholder="Your Message"></textarea>
-                    </div>
-                    <button type="submit" class="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700 pulse-button">Send Message</button>
-                </form>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="gradient-bg p-4 text-center">
-        <div class="space-x-4 mb-2">
-            <a href="https://github.com/shihab-278" class="social-icon hover:text-gray-300"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/shihab-uddin-20606722a/" class="social-icon hover:text-gray-300"><i class="fab fa-linkedin"></i></a>
-            <a href="https://x.com/ahmedshihab278" class="social-icon hover:text-gray-300"><i class="fab fa-twitter"></i></a>
+    <footer class="bg-black/50 backdrop-blur-xl border-t border-white/10">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <!-- Brand -->
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-600 flex items-center justify-center">
+                            <span class="text-white font-bold text-lg">S</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Shihab Uddin</h3>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed">
+                        Creating exceptional digital experiences with passion and precision. 
+                        Let's build the future together.
+                    </p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
+                    <div class="space-y-2">
+                        <a href="#home" class="block text-gray-400 hover:text-white transition-colors">Home</a>
+                        <a href="#about" class="block text-gray-400 hover:text-white transition-colors">About</a>
+                        <a href="#experience" class="block text-gray-400 hover:text-white transition-colors">Experience</a>
+                        <a href="pages/projects.html" class="block text-gray-400 hover:text-white transition-colors">Projects</a>
+                        <a href="#contact" class="block text-gray-400 hover:text-white transition-colors">Contact</a>
+                    </div>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Get In Touch</h4>
+                    <div class="space-y-2">
+                        <p class="text-gray-400">📧 suahmd193@gmail.com</p>
+                        <p class="text-gray-400">📱 +8801641388594</p>
+                        <p class="text-gray-400">📍 Dhaka, Bangladesh</p>
+                    </div>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="https://github.com/shihab-278" class="social-icon">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/shihab-uddin-20606722a/" class="social-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://x.com/ahmedshihab278" class="social-icon">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="border-t border-white/10 pt-8 text-center">
+                <p class="text-gray-400">
+                    © 2025 Shihab Uddin. All rights reserved. 
+                    <span class="text-purple-400">Built with 💜 and modern technologies</span>
+                </p>
+            </div>
         </div>
-        <p>© 2025 Shihab Uddin. All rights reserved.</p>
     </footer>
 
     <!-- JavaScript -->

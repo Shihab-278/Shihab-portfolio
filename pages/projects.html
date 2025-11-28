@@ -3,67 +3,298 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Projects by Shihab Uddin, showcasing web development and software engineering work.">
-    <meta name="keywords" content="Shihab Uddin, Projects, Portfolio, Web Development">
+    <meta name="description" content="Explore Shihab Uddin's professional projects showcasing modern web development, innovative solutions, and cutting-edge technologies.">
+    <meta name="keywords" content="Shihab Uddin, Projects, Portfolio, Web Development, Full Stack, Laravel, Node.js, React">
     <meta name="author" content="Shihab Uddin">
-    <title>Projects - Shihab Uddin</title>
+    <meta name="robots" content="index, follow">
+    <title>Projects - Shihab Uddin | Professional Software Developer</title>
+    
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" as="style">
+    
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
     <!-- Font Awesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/styles.css">
 </head>
-<body class="min-h-screen bg-gray-900 text-gray-200">
-    <!-- Loading Animation -->
-    <div id="loader" class="fixed inset-0 bg-gray-900 flex items-center justify-center z-50">
-        <div class="loader-circle"></div>
+<body class="min-h-screen">
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress">
+        <div class="scroll-progress-bar" id="scrollProgressBar"></div>
     </div>
 
-    <!-- Navbar -->
-    <nav class="gradient-bg p-4 sticky top-0 z-10">
-        <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-2xl font-bold">Shihab Uddin</h1>
-            <div class="space-x-4">
-                <a href="../index.html#home" class="nav-link hover:text-gray-300">Home</a>
-                <a href="../index.html#about" class="nav-link hover:text-gray-300">About</a>
-                <a href="projects.html" class="nav-link hover:text-gray-300">Projects</a>
-                <a href="../index.html#contact" class="nav-link hover:text-gray-300">Contact</a>
+    <!-- Loading Animation -->
+    <div id="loader" class="fixed inset-0 flex items-center justify-center z-50">
+        <div class="text-center">
+            <div class="loader-circle mb-4"></div>
+            <p class="text-lg font-medium text-white">Loading Projects...</p>
+        </div>
+    </div>
+
+    <!-- Modern Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-dark backdrop-blur-xl border-b border-white/10">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-600 flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">S</span>
+                    </div>
+                    <h1 class="text-xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                        Shihab Uddin
+                    </h1>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-2">
+                    <a href="../index.html#home" class="nav-link">Home</a>
+                    <a href="../index.html#about" class="nav-link">About</a>
+                    <a href="../index.html#experience" class="nav-link">Experience</a>
+                    <a href="projects.html" class="nav-link bg-white/10">Projects</a>
+                    <a href="../index.html#contact" class="nav-link">Contact</a>
+                    <a href="../assets/shihab.pdf" download class="modern-btn ml-4">
+                        <i class="fas fa-download"></i>
+                        Resume
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg glass">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div id="mobileMenu" class="md:hidden mt-4 space-y-2 hidden">
+                <a href="../index.html#home" class="block nav-link">Home</a>
+                <a href="../index.html#about" class="block nav-link">About</a>
+                <a href="../index.html#experience" class="block nav-link">Experience</a>
+                <a href="projects.html" class="block nav-link bg-white/10">Projects</a>
+                <a href="../index.html#contact" class="block nav-link">Contact</a>
             </div>
         </div>
     </nav>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-16 scroll-color-shift">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-8 fade-in">My Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project 1 -->
-                <div class="flip-card fade-in">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front bg-gray-800 p-6 rounded-lg glow-effect">
-                            <h3 class="text-xl font-semibold mb-2">Tour and Travel Management System</h3>
-                            <p class="mb-4">A web application with guide booking, package exploration, authentication, reviews, and payment gateway.</p>
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 min-h-screen flex items-center">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h1 class="hero-title fade-in">
+                    My <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">Projects</span>
+                </h1>
+                <p class="hero-subtitle fade-in">
+                    Explore my journey through code, creativity, and innovation
+                </p>
+            </div>
+            
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12 fade-in">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fas fa-th-large mr-2"></i>All Projects
+                </button>
+                <button class="filter-btn" data-filter="web">
+                    <i class="fas fa-globe mr-2"></i>Web Apps
+                </button>
+                <button class="filter-btn" data-filter="fullstack">
+                    <i class="fas fa-layer-group mr-2"></i>Full Stack
+                </button>
+                <button class="filter-btn" data-filter="php">
+                    <i class="fab fa-php mr-2"></i>PHP
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Projects Grid Section -->
+    <section class="pb-20">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projectsGrid">
+                <!-- Project 1: Tour and Travel Management System -->
+                <div class="project-card fade-in hover-scale" data-category="web fullstack">
+                    <div class="relative overflow-hidden rounded-t-xl">
+                        <div class="h-48 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 flex items-center justify-center">
+                            <i class="fas fa-plane text-6xl text-white/80"></i>
                         </div>
-                        <div class="flip-card-back bg-blue-600 p-6 rounded-lg">
-                            <p>Technologies: Node Js, Express Js, MondoDB, Tailwind CSS</p>
-                            <a href="https://github.com/Shihab-278/Outing-BD-Client" class="text-white hover:underline">View Project</a>
+                        <div class="absolute top-4 right-4">
+                            <span class="px-3 py-1 bg-blue-600 text-white text-xs font-semibold rounded-full">
+                                Full Stack
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold text-white mb-3">
+                            Tour & Travel Management System
+                        </h3>
+                        <p class="text-gray-300 mb-6 leading-relaxed">
+                            A comprehensive web application featuring guide booking, package exploration, 
+                            user authentication, review systems, and integrated payment gateway.
+                        </p>
+                        
+                        <!-- Tech Stack -->
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-green-600/20 text-green-400 text-xs rounded-full border border-green-600/30">
+                                Node.js
+                            </span>
+                            <span class="px-3 py-1 bg-purple-600/20 text-purple-400 text-xs rounded-full border border-purple-600/30">
+                                Express.js
+                            </span>
+                            <span class="px-3 py-1 bg-green-600/20 text-green-400 text-xs rounded-full border border-green-600/30">
+                                MongoDB
+                            </span>
+                            <span class="px-3 py-1 bg-blue-600/20 text-blue-400 text-xs rounded-full border border-blue-600/30">
+                                Tailwind CSS
+                            </span>
+                        </div>
+                        
+                        <!-- Action Buttons -->
+                        <div class="flex space-x-3">
+                            <a href="https://github.com/Shihab-278/Outing-BD-Client" 
+                               class="flex-1 flex items-center justify-center space-x-2 py-2 px-4 bg-white/10 hover:bg-white/20 rounded-lg transition-colors border border-white/20">
+                                <i class="fab fa-github"></i>
+                                <span class="text-sm font-medium">Code</span>
+                            </a>
+                            <!-- <button class="flex-1 flex items-center justify-center space-x-2 py-2 px-4 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span class="text-sm font-medium">Live Demo</span>
+                            </button> -->
                         </div>
                     </div>
                 </div>
-                <!-- Project 2 -->
-                <div class="flip-card fade-in">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front bg-gray-800 p-6 rounded-lg glow-effect">
-                            <h3 class="text-xl font-semibold mb-2">University Lost & Found Website</h3>
-                            <p class="mb-4">A web application with CRUD operations, built using XAMPP, PHP, and MySQL.</p>
+                
+                <!-- Project 2: University Lost & Found -->
+                <div class="project-card fade-in hover-scale" data-category="web php">
+                    <div class="relative overflow-hidden rounded-t-xl">
+                        <div class="h-48 bg-gradient-to-br from-purple-600 via-pink-600 to-red-600 flex items-center justify-center">
+                            <i class="fas fa-search text-6xl text-white/80"></i>
                         </div>
-                        <div class="flip-card-back bg-blue-600 p-6 rounded-lg">
-                            <p>Technologies: PHP, JavaScript, CSS, MySQL</p>
-                            <a href="https://github.com/Shihab-278/Lost-and-found" class="text-white hover:underline">View Project</a>
+                        <div class="absolute top-4 right-4">
+                            <span class="px-3 py-1 bg-purple-600 text-white text-xs font-semibold rounded-full">
+                                PHP
+                            </span>
                         </div>
+                    </div>
+                    
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold text-white mb-3">
+                            University Lost & Found System
+                        </h3>
+                        <p class="text-gray-300 mb-6 leading-relaxed">
+                            A comprehensive web application for university students to report and find lost items 
+                            with full CRUD operations and user management.
+                        </p>
+                        
+                        <!-- Tech Stack -->
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-purple-600/20 text-purple-400 text-xs rounded-full border border-purple-600/30">
+                                PHP
+                            </span>
+                            <span class="px-3 py-1 bg-yellow-600/20 text-yellow-400 text-xs rounded-full border border-yellow-600/30">
+                                JavaScript
+                            </span>
+                            <span class="px-3 py-1 bg-blue-600/20 text-blue-400 text-xs rounded-full border border-blue-600/30">
+                                MySQL
+                            </span>
+                            <span class="px-3 py-1 bg-orange-600/20 text-orange-400 text-xs rounded-full border border-orange-600/30">
+                                CSS3
+                            </span>
+                        </div>
+                        
+                        <!-- Action Buttons -->
+                        <div class="flex space-x-3">
+                            <a href="https://github.com/Shihab-278/Lost-and-found" 
+                               class="flex-1 flex items-center justify-center space-x-2 py-2 px-4 bg-white/10 hover:bg-white/20 rounded-lg transition-colors border border-white/20">
+                                <i class="fab fa-github"></i>
+                                <span class="text-sm font-medium">Code</span>
+                            </a>
+                            <!-- <button class="flex-1 flex items-center justify-center space-x-2 py-2 px-4 bg-purple-600 hover:bg-purple-700 rounded-lg transition-colors">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span class="text-sm font-medium">Live Demo</span>
+                            </button> -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3: Coming Soon Project -->
+                <div class="project-card fade-in hover-scale" data-category="web fullstack">
+                    <div class="relative overflow-hidden rounded-t-xl">
+                        <div class="h-48 bg-gradient-to-br from-teal-600 via-cyan-600 to-blue-600 flex items-center justify-center">
+                            <i class="fas fa-rocket text-6xl text-white/80"></i>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="px-3 py-1 bg-teal-600 text-white text-xs font-semibold rounded-full">
+                                Coming Soon
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold text-white mb-3">
+                            E-Commerce Platform
+                        </h3>
+                        <p class="text-gray-300 mb-6 leading-relaxed">
+                            A modern e-commerce platform with advanced features including real-time inventory, 
+                            payment integration, and admin dashboard. Currently in development.
+                        </p>
+                        
+                        <!-- Tech Stack -->
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-red-600/20 text-red-400 text-xs rounded-full border border-red-600/30">
+                                Laravel
+                            </span>
+                            <span class="px-3 py-1 bg-blue-600/20 text-blue-400 text-xs rounded-full border border-blue-600/30">
+                                React
+                            </span>
+                            <span class="px-3 py-1 bg-green-600/20 text-green-400 text-xs rounded-full border border-green-600/30">
+                                MySQL
+                            </span>
+                            <span class="px-3 py-1 bg-purple-600/20 text-purple-400 text-xs rounded-full border border-purple-600/30">
+                                Stripe API
+                            </span>
+                        </div>
+                        
+                        <!-- Action Buttons -->
+                        <div class="flex space-x-3">
+                            <button disabled 
+                               class="flex-1 flex items-center justify-center space-x-2 py-2 px-4 bg-gray-600/50 rounded-lg transition-colors border border-gray-600/50 cursor-not-allowed">
+                                <i class="fab fa-github"></i>
+                                <span class="text-sm font-medium">Coming Soon</span>
+                            </button>
+                            <button disabled class="flex-1 flex items-center justify-center space-x-2 py-2 px-4 bg-gray-600/50 rounded-lg transition-colors cursor-not-allowed">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span class="text-sm font-medium">In Development</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Call to Action -->
+            <div class="text-center mt-20 fade-in">
+                <div class="glass rounded-2xl p-12 max-w-2xl mx-auto">
+                    <h3 class="text-3xl font-bold text-white mb-4">
+                        Have a Project in Mind?
+                    </h3>
+                    <p class="text-gray-300 mb-8 text-lg">
+                        I'm always excited to work on new challenges and bring innovative ideas to life. 
+                        Let's collaborate and create something amazing together!
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="../index.html#contact" class="modern-btn">
+                            <i class="fas fa-paper-plane"></i>
+                            Start a Project
+                        </a>
+                        <a href="mailto:shihab.dev@example.com" class="modern-btn bg-transparent border-2 border-white/20 hover:border-white/40">
+                            <i class="fas fa-envelope"></i>
+                            Send Email
+                        </a>
                     </div>
                 </div>
             </div>
@@ -71,13 +302,40 @@
     </section>
 
     <!-- Footer -->
-    <footer class="gradient-bg p-4 text-center">
-       <div class="space-x-4 mb-2">
-            <a href="https://github.com/shihab-278" class="social-icon hover:text-gray-300"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/shihab-uddin-20606722a/" class="social-icon hover:text-gray-300"><i class="fab fa-linkedin"></i></a>
-            <a href="https://x.com/ahmedshihab278" class="social-icon hover:text-gray-300"><i class="fab fa-twitter"></i></a>
+    <footer class="bg-black/50 backdrop-blur-xl border-t border-white/10">
+        <div class="container mx-auto px-6 py-12">
+            <div class="text-center">
+                <div class="flex items-center justify-center space-x-3 mb-4">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-600 flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">S</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Shihab Uddin</h3>
+                </div>
+                
+                <p class="text-gray-400 mb-6 max-w-md mx-auto">
+                    Crafting digital experiences with passion and precision
+                </p>
+                
+                <div class="flex justify-center space-x-4 mb-8">
+                    <a href="https://github.com/shihab-278" class="social-icon">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/shihab-uddin-20606722a/" class="social-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://x.com/ahmedshihab278" class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+                
+                <div class="border-t border-white/10 pt-6">
+                    <p class="text-gray-400">
+                        © 2025 Shihab Uddin. All rights reserved. 
+                        <span class="text-purple-400">Built with 💜 and modern technologies</span>
+                    </p>
+                </div>
+            </div>
         </div>
-        <p>© 2025 Shihab Uddin. All rights reserved.</p>
     </footer>
 
     <!-- JavaScript -->
