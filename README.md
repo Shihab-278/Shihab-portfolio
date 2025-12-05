@@ -22,68 +22,50 @@ Shihab-portfolio/
 ├── assets/
 │   ├── images/
 │   └── fonts/
-├── css/
-│   └── styles.css          # Design system & custom styles
-├── js/
-│   └── script.js           # Interactions, animations, filters, UX
-├── pages/
-│   └── projects.html       # Projects grid & filter UI
-├── index.html              # Home, About, Experience, Contact
-└── README.md               # Documentation
-```
+Shihab Uddin — Professional Portfolio
+
+এটি আমার একটি সিম্পল কিন্তু প্রফেশনাল পোর্টফোলিও ওয়েবসাইট যেখানে আমার স্কিল, প্রজেক্ট, এক্সপেরিয়েন্স এবং কন্ট্যাক্ট তথ্য দেখা যাবে।
+
+Live Link
+- https://shihab-278.github.io/Shihab-portfolio/
+
+Features
+- আধুনিক UI (Glassmorphism, গ্রেডিয়েন্ট, প্রফেশনাল টাইপোগ্রাফি)
+- পুরোপুরি রেসপনসিভ (মোবাইল/ট্যাবলেট/ডেস্কটপ)
+- স্মুথ অ্যানিমেশন ও স্ক্রল প্রগ্রেস বার
+- মোবাইল ফ্রেন্ডলি ন্যাভিগেশন
+- প্রজেক্ট কার্ড + টেক স্ট্যাক ব্যাজ
+- কন্ট্যাক্ট ফর্ম (Formspree ইন্টেগ্রেশন)
 
 Tech Stack
-- HTML5
-- CSS3 + Tailwind CSS
+- HTML, CSS (Tailwind CSS)
 - JavaScript (ES6+)
 - Font Awesome
-- GitHub Pages (hosting)
-- Formspree (contact form backend)
+- GitHub Pages (Hosting)
+- Formspree (Contact Backend)
 
-Local Setup
+Project Structure
+```
+Shihab-portfolio/
+├── assets/
+├── css/styles.css
+├── js/script.js
+├── pages/projects.html
+└── index.html
+```
+
+Local Run
 ```bash
-# Clone
 git clone https://github.com/shihab-278/Shihab-portfolio.git
 cd Shihab-portfolio
-HTML5: Structure of the website.
-CSS3/Tailwind CSS: Styling and responsive design.
-JavaScript: Smooth scrolling, animations, and interactions.
-Font Awesome: Social media icons.
-GitHub Pages: Hosting.
-
-Setup Instructions
-
-Clone the Repository:git clone https://github.com/shihab-278/shihab-portfolio.git
-
-
-Open Locally:
-Install the Live Server extension in VS Code.
-Open index.html and click "Go Live" to view the website.
-
-
-Deploy to GitHub Pages:
-Push the code to a GitHub repository.
-Go to Settings > Pages in the repository.
-Select the main branch and / (root) folder.
-The website will be live at (https://shihab-278.github.io/Shihab-portfolio/)
-
-# Preview locally
 python3 -m http.server 8000
-# Open http://localhost:8000 in your browser
+# ব্রাউজারে খুলুন: http://localhost:8000
 ```
-Alternatively, use VS Code Live Server to open `index.html`.
 
-Deployment (GitHub Pages)
-1. Push code to the `main` branch.
-2. In GitHub repo: Settings → Pages → Source: `main` and folder `/` (root).
-3. Your site will be live at: https://shihab-278.github.io/Shihab-portfolio/
-
-Customization
-- Profile Image: Update paths in `index.html` and `pages/projects.html` (e.g., `assets/my.jpg`).
-- Projects: Edit cards in `pages/projects.html` (titles, tech tags, GitHub links, demos).
-- Social Links: Update GitHub/LinkedIn/Twitter in the footer in both pages.
-- Favicon: Place your icon at `assets/images/favicon.ico`.
-- Contact Email: Formspree action is set in `index.html` (`https://formspree.io/f/myzgkjna`).
+Deploy (GitHub Pages)
+1) রিপোতে কোড পুশ করুন (`main` ব্রাঞ্চ)
+2) Repo Settings → Pages → Source: `main` এবং Folder: `/`
+3) লাইভ হবে: https://shihab-278.github.io/Shihab-portfolio/
 
 Contact
 - Email: suahmd193@gmail.com
@@ -91,3 +73,4 @@ Contact
 
 License
 © 2025 Shihab Uddin. All rights reserved.
+Deployment (GitHub Pages)
