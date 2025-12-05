@@ -45,6 +45,27 @@ Local Setup
 # Clone
 git clone https://github.com/shihab-278/Shihab-portfolio.git
 cd Shihab-portfolio
+HTML5: Structure of the website.
+CSS3/Tailwind CSS: Styling and responsive design.
+JavaScript: Smooth scrolling, animations, and interactions.
+Font Awesome: Social media icons.
+GitHub Pages: Hosting.
+
+Setup Instructions
+
+Clone the Repository:git clone https://github.com/shihab-278/shihab-portfolio.git
+
+
+Open Locally:
+Install the Live Server extension in VS Code.
+Open index.html and click "Go Live" to view the website.
+
+
+Deploy to GitHub Pages:
+Push the code to a GitHub repository.
+Go to Settings > Pages in the repository.
+Select the main branch and / (root) folder.
+The website will be live at (https://shihab-278.github.io/Shihab-portfolio/)
 
 # Preview locally
 python3 -m http.server 8000
