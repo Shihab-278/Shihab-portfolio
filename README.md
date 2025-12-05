@@ -24,25 +24,25 @@ Shihab-portfolio/
 │   └── fonts/
 Shihab Uddin — Professional Portfolio
 
-এটি আমার একটি সিম্পল কিন্তু প্রফেশনাল পোর্টফোলিও ওয়েবসাইট যেখানে আমার স্কিল, প্রজেক্ট, এক্সপেরিয়েন্স এবং কন্ট্যাক্ট তথ্য দেখা যাবে।
+A simple, professional portfolio website showcasing my skills, projects, experience, and contact information.
 
 Live Link
 - https://shihab-278.github.io/Shihab-portfolio/
 
 Features
-- আধুনিক UI (Glassmorphism, গ্রেডিয়েন্ট, প্রফেশনাল টাইপোগ্রাফি)
-- পুরোপুরি রেসপনসিভ (মোবাইল/ট্যাবলেট/ডেস্কটপ)
-- স্মুথ অ্যানিমেশন ও স্ক্রল প্রগ্রেস বার
-- মোবাইল ফ্রেন্ডলি ন্যাভিগেশন
-- প্রজেক্ট কার্ড + টেক স্ট্যাক ব্যাজ
-- কন্ট্যাক্ট ফর্ম (Formspree ইন্টেগ্রেশন)
+- Modern UI (glassmorphism, gradients, professional typography)
+- Fully responsive (mobile, tablet, desktop)
+- Smooth animations and scroll progress bar
+- Mobile-friendly navigation
+- Project cards with tech stack badges
+- Contact form (Formspree integration)
 
 Tech Stack
 - HTML, CSS (Tailwind CSS)
 - JavaScript (ES6+)
 - Font Awesome
-- GitHub Pages (Hosting)
-- Formspree (Contact Backend)
+- GitHub Pages (hosting)
+- Formspree (contact backend)
 
 Project Structure
 ```
@@ -59,13 +59,13 @@ Local Run
 git clone https://github.com/shihab-278/Shihab-portfolio.git
 cd Shihab-portfolio
 python3 -m http.server 8000
-# ব্রাউজারে খুলুন: http://localhost:8000
+# Open: http://localhost:8000
 ```
 
 Deploy (GitHub Pages)
-1) রিপোতে কোড পুশ করুন (`main` ব্রাঞ্চ)
-2) Repo Settings → Pages → Source: `main` এবং Folder: `/`
-3) লাইভ হবে: https://shihab-278.github.io/Shihab-portfolio/
+1) Push code to the `main` branch
+2) Repo Settings → Pages → Source: `main`, Folder: `/`
+3) Live URL: https://shihab-278.github.io/Shihab-portfolio/
 
 Contact
 - Email: suahmd193@gmail.com
