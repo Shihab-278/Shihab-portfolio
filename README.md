@@ -45,7 +45,7 @@ Deploy to GitHub Pages:
 Push the code to a GitHub repository.
 Go to Settings > Pages in the repository.
 Select the main branch and / (root) folder.
-The website will be live at https://shihab-278.github.io/shihab-portfolio.
+The website will be live at (https://shihab-278.github.io/Shihab-portfolio/)
 
 
 
